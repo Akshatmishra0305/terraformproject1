@@ -1,0 +1,17 @@
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+
+# Terraform provider and module cache
+.terraform/
+.terraform.lock.hcl
+
+# Local environment files
+.env
+
+# Crash logs
+crash.log
+
+# Temporary files
+*.log
+*.tmp
