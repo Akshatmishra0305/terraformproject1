@@ -23,3 +23,22 @@ terraformproject1/
 ├── userdata1.sh # User data script for EC2 instance 2
 └── README.md # Project documentation
 
+
+
+
+
+        Internet
+            ↓
+     [ Application Load Balancer ]
+          ↙               ↘
+   [ EC2 - webserver1 ]   [ EC2 - webserver2 ]
+         (sub1)                  (sub2)
+            ↓                        ↓
+      Served by Apache via      Served by Apache via
+      userdata.sh               userdata1.sh
+
+     VPC ➝ 2 Public Subnets ➝ Route Table ➝ Internet Gateway
+        ↳ All secured via Security Group (HTTP & SSH)
+
+     Target Group connects ALB to EC2 instances
+
